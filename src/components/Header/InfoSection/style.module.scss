@@ -1,0 +1,89 @@
+@import "../../../styles/global.scss";
+
+.info__section {
+
+
+    .benefits__container {
+        @include display($justify: center, $gap: 119px);
+        margin-block: 7px;
+    
+        .info__benefit {
+            @include display($justify: center, $align: center, $gap: 9px);
+            height: 20px;
+
+            .benefit__text {
+                color: $color-gray-100;
+                font-size: $fs-detail-200;
+                font-weight: $fw-medium;
+
+                .benefit__highlight {
+                    color: $color-primary-100;
+                    font-weight: $fw-semibold;
+                }
+            }
+        }
+    }
+    
+    .utilities__container {
+        @include display($justify: space-around, $align: center);
+        border-block: 1px solid $color-white-300;
+        padding-block: 12px;
+
+
+        .search__utilities {
+            @include display($justify: space-between, $align: center);
+            background-color: $color-white-200;
+            width: 657px;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 5px 8px -4px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 5px 8px -4px rgba(0,0,0,0.75);
+            box-shadow: 0px 5px 8px -4px rgba(0,0,0,0.75);
+            margin-left: 60px;
+
+            .utilities__input {
+                background-color: transparent;
+                padding: 14px 24px;
+                width: 100%;
+                
+            }
+
+            .utilities__input::placeholder {
+                color: $color-gray-100;
+                font-weight: $fw-medium;
+                font-size: $fs-detail-400;
+            }
+
+            .utilities__button {
+                padding-block: 10px;
+                padding-right: 16px;
+            }
+        }
+
+        .icons__utilities {
+            @include display($justify: space-around, $align: center, $gap: 24px);
+        }
+    }
+
+    .categories__nav {
+        @include display($justify: center, $align: center);
+
+        .categories__list {
+            width: 100%;
+            @include display($justify: space-around, $align: center);
+            padding-block: 15px;
+
+            .categories__item {
+                @include display($gap: 10px, $align: center);
+                font-size: $fs-detail-200;
+                font-weight: $fw-semibold;
+                color: $color-gray-100;
+
+                &:hover {
+                    color: $color-primary-100;
+                }
+            }
+        }
+    }
+}
+
+

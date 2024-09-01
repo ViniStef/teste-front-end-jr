@@ -1,0 +1,62 @@
+@import "../../../styles/global.scss";
+
+.categories__list {
+    @include display($justify: space-between, $align: center, $gap: 25px);
+    width: 100%;
+
+}
+
+.related__container {
+    @include display($justify: center, $align: center);
+    padding-top: 10px;
+
+    .related__title {
+        color: $color-primary-100;
+    }
+
+    .related__line {
+        width: 360px;
+        color: $color-white-400;
+    }
+}
+
+.productTypes__container {
+    padding-block: 10px;
+
+    .productTypes__list {
+        @include display($justify: space-around, $align: center);
+        height: 48px;
+        border-block: 1px solid $color-gray-50;
+        border-left: 1px solid $color-gray-50;
+    }
+}
+
+.carousel__container {
+    @include display($justify: space-between, $align: center);
+    margin-top: 10px;
+
+    .buttons__wrapper {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 35px;
+
+        .arrowLeft__carousel, .arrowRight__carousel {
+            position: relative;
+            padding-inline: 1.3rem;
+            // right: 0;
+            height: 100%;
+        }
+
+        .arrowRight__carousel {
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    
+    .product__carousel {
+        @include display($justify: space-between, $align: center);
+        width: 100%;
+    }
+}

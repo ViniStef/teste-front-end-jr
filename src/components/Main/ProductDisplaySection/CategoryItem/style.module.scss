@@ -1,0 +1,31 @@
+@import "../../../../styles/global.scss";
+
+.category__item {
+    @include display($justify: center, $align: center, $direction: column, $gap: 25px);
+    padding-block: 35px;
+
+    &:hover {
+        .category__wrapper {
+            background-color: $color-white-100;
+        }
+        .category__name {
+            color: $color-primary-100;
+        }
+    }
+
+    .category__wrapper {
+        @include display($justify: center, $align: center, $direction: column);
+        box-shadow: 0px 0px 5px 5px $color-white-400;
+        background-color: $color-white-250;
+        border-radius: 10px;
+        width: 128px;
+        height: 128px;
+    }
+
+    .category__name {
+        font-size: $fs-highlight-200;
+        font-weight: $fw-medium;
+        color: $color-black-100;
+
+    }
+}

@@ -1,0 +1,19 @@
+@import "../../../../styles/global.scss";
+
+.productType__item {
+    @include display($justify: center, $align: center);
+    border-right: 1px solid $color-gray-50;
+    width: 100%;
+    
+
+    .productType__button {
+        font-size: $fs-highlight-200;
+        font-weight: $fw-normal;
+        height: 48px;
+
+        &:hover {
+            color: $color-primary-100;
+            font-weight: $fw-bold;
+        }
+    }
+}

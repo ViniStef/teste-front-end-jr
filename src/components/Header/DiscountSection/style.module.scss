@@ -1,0 +1,46 @@
+@import "../../../styles/global.scss";
+
+.discount__section {
+  @include display($justify: center, $align: center);
+  width: 100%;
+  background-image: url("src/assets/highlights/HeaderDiscount.png");
+  min-height: 390px;
+  height: 25vw;
+  max-height: 510px;
+  background-repeat: no-repeat;
+  box-shadow: inset 0px -300px 200px -46px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: inset 0px -300px 200px -46px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px -300px 200px -46px rgba(0, 0, 0, 0.75);
+  position: relative;
+
+  background-size: 100%;
+
+  .discount__content {
+    width: 90%;
+
+    .content__wrap {
+      @include display($align: flex-start, $direction: column);
+      width: 50%;
+
+      .content__title {
+        color: $color-white-100;
+        line-height: 1.6;
+      }
+
+      .content__subtitle {
+        color: $color-white-100;
+      }
+
+      .content__button {
+        background-color: $color-primary-100;
+        border-radius: 5px;
+        font-size: $fs-highlight-500;
+        font-weight: $fw-semibold;
+        color: $color-white-100;
+        padding: 18px 26px;
+        width: 250px;
+        margin-top: 50px;
+      }
+    }
+  }
+}
