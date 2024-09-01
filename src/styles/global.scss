@@ -1,0 +1,46 @@
+:root {
+    // Font Families
+    --ff-primary: "Poppins", sans-serif;
+    --ff-accent: "Lato", sans-serif;
+
+    // Colors
+    --color-primary: #F71963;
+    --color-white-100: #FFFFFF;
+    --color-white-200: #F6F5F2;
+    --color-white-300: #DEDEDE;
+    --color-gray-100: #9F9F9F;
+    --color-gray-200: #808080;
+    --color-black-100: #4E4E4E;
+    --color-black-200: #3B3B3B;
+    --color-black-300: #3F3F40;
+    --color-black-400: #2A2A2A;
+    --color-black-500: #222222;
+    --color-accent: #041E50;
+
+
+    // Font Sizes
+    --fs-small-sm: 0.65rem; // Small 10px
+    --fs-small-md: 0.75rem; // Small 12px
+    --fs-small-lg: 0.813rem; // Small 13px
+    --fs-small-xl: 0.875rem; // Small 14px
+
+    --fs-medium-sm: 0.938rem; // Medium 15px
+    --fs-medium-md: 1rem; // Medium 16px
+    --fs-medium-lg: 1.125rem; // Medium 18px
+    --fs-medium-xl: 1.25rem; // Medium 20px
+
+    --fs-large-sm: 1.313rem; // Large 21px
+    --fs-large-md: 1.875rem; // Large 30px
+    --fs-large-lg: 2.25rem; // Large 36px
+    --fs-large-xl: 2.5rem; // Large 40px
+    --fs-large-xxl: 3rem; // Large 48px
+
+    // Font Weights
+    --fw-light: 200;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+    --fw-black: 900;
+
+}
