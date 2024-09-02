@@ -1,6 +1,10 @@
 import style from "./style.module.scss";
 
-export const ProductTypeItem = ({ productType }: any) => {
+type productType = {
+  productType: string
+}
+
+export const ProductTypeItem = ({ productType }:productType) => {
   return (
     <li className={style.productType__item}>
       <button className={style.productType__button}>{productType}</button>

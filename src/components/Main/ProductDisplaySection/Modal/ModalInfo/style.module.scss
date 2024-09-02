@@ -58,6 +58,7 @@
                 padding: 10px;
                 @include display($justify: space-between, $align: center);
                 color: $color-accent;
+
             }
 
             p {

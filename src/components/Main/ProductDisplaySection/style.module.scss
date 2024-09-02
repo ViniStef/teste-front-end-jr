@@ -31,31 +31,16 @@
 }
 
 .carousel__container {
-  @include display($justify: space-between, $align: center);
-  margin-top: 10px;
+  position: relative;
 
-  .buttons__wrapper {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    height: 35px;
+  width: 100%;
+  padding: 5px;
 
-    .arrowLeft__carousel,
-    .arrowRight__carousel {
-      position: relative;
-      padding-inline: 1.3rem;
-      // right: 0;
-      height: 100%;
-    }
-
-    .arrowRight__carousel {
-      position: absolute;
-      right: 0;
-    }
-  }
-
-  .product__carousel {
+  .slider__content {
     @include display($justify: space-between, $align: center);
-    width: 100%;
+    position: relative;
+    overflow: visible;
   }
 }
+
+

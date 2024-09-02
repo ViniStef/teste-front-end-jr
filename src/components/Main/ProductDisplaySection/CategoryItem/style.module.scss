@@ -3,6 +3,7 @@
 .category__item {
     @include display($justify: center, $align: center, $direction: column, $gap: 25px);
     padding-block: 35px;
+    cursor: pointer;
 
     &:hover {
         .category__wrapper {

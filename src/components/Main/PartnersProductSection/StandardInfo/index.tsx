@@ -1,6 +1,12 @@
 import style from "./style.module.scss";
 
-export const StandardInfo = ({standardTitle, standardDescription, isProduct}:any) => {
+type standardExpected = {
+    standardTitle: string,
+    standardDescription: string,
+    isProduct: boolean
+}
+
+export const StandardInfo = ({standardTitle, standardDescription, isProduct}:standardExpected) => {
     return (
         <div className={isProduct ? style.product__container : style.standard__container}>
           <div className={style.standard__wrapper}>

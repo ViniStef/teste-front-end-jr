@@ -1,30 +1,35 @@
 import { CategoryItem } from "./CategoryItem";
 import { ProductTypeItem } from "./ProductTypeItem";
 import style from "./style.module.scss";
-import arrowLeft from "../../../assets/svgs/ArrowLeft.svg";
-import arrowRight from "../../../assets/svgs/ArrowRight.svg";
 import { CarouselItem } from "./CarouselItem";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { ButtonGroup } from "./ButtonGroup";
+import { Product } from "../../HomePage";
 
-import { useEffect } from "react";
-
-
-
-export const ProductDisplaySection = ({ setIsVisible,productList, setProductInfo }: any) => {
-
-
-  useEffect(() => {
-    let currentHold = 4
-    let liProducts = document.querySelectorAll(".carousel__item")
-    liProducts.forEach((li, index) => {
-      console.log(li)
-      if (index <= currentHold) {
-        li.classList.add("show__carousel")
-      } else {
-        li.classList.remove("show__carousel")
-
-      }
-    })
-  },[])
+export const ProductDisplaySection = ({
+  setIsVisible,
+  productList,
+  setProductInfo,
+}: any) => {
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 1440 },
+      items: 4,
+    },
+    desktop: {
+      breakpoint: { max: 1440, min: 1024 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
 
   return (
     <section>
@@ -67,7 +72,6 @@ export const ProductDisplaySection = ({ setIsVisible,productList, setProductInfo
           <h4 className={style.related__title}>Produtos Relacionados</h4>
           <hr className={style.related__line} />
         </div>
-
         <nav className={style.productTypes__container}>
           <ul className={style.productTypes__list}>
             <ProductTypeItem productType={"CELULAR"} />
@@ -79,17 +83,8 @@ export const ProductDisplaySection = ({ setIsVisible,productList, setProductInfo
           </ul>
         </nav>
 
-        <div className={style.carousel__container}>
-          <div className={style.buttons__wrapper}>
-            <button className={style.arrowLeft__carousel}>
-              <img src={arrowLeft} alt="Left Arrow" />
-            </button>
-            <button className={style.arrowLeft__carousel}>
-              <img src={arrowRight} alt="Right Arrow" />
-            </button>
-          </div>
-          <ul className={style.product__carousel}>
-            {productList.map((product:any, index:any)=> {
+        <Carousel infinite={true} arrows={false} customButtonGroup={<ButtonGroup />} itemClass={style.slider__item} sliderClass={style.slider__content} className={style.carousel__container} responsive={responsive}>
+        {productList.map((product:Product, index:number) => {
               return (
                 <CarouselItem
                   setIsVisible={setIsVisible}
@@ -105,11 +100,10 @@ export const ProductDisplaySection = ({ setIsVisible,productList, setProductInfo
                   }
                   productPrice={product.price}
                 />
-                
               );
             })}
-          </ul>
-        </div>
+        </Carousel>
+
       </div>
     </section>
   );

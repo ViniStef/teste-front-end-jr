@@ -15,11 +15,11 @@ export type Product = {
 export type Products = Product[]
 
 export const HomePage = () => {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   const [productList, setProductList] = useState<Product[]>([]);
 
-  const [productInfo, setProductInfo] = useState<Product>()
+  const [productInfo, setProductInfo] = useState<Product>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,7 +30,6 @@ export const HomePage = () => {
         const jsonData = JSON.parse(response.data.contents);
         const productData = jsonData.products;
         setProductList(productData);
-        console.log(productData);
       } catch (error) {
         console.error("Error fetching data:", error);
       }

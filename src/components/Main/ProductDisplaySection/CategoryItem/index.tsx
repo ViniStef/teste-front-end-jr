@@ -1,6 +1,11 @@
 import style from "./style.module.scss";
 
-export const CategoryItem = ({categoryName, categoryImg}: any) => {
+type categoriesExpected = {
+  categoryName: string,
+  categoryImg: string
+}
+
+export const CategoryItem = ({categoryName, categoryImg}: categoriesExpected) => {
 
   return (
     <li className={style.category__item}>
