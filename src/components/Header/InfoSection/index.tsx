@@ -3,7 +3,7 @@ import shield from "../../../assets/svgs/ShieldCheck.svg"
 import truck from "../../../assets/svgs/Truck.svg"
 import creditCard from "../../../assets/svgs/CreditCard.svg"
 import logo from "../../../assets/svgs/LogoMain.svg"
-import magnifyingGlass from "../../../assets/svgs/magnifyingGlass.svg"
+import magnifyingGlass from "../../../assets/svgs/MagnifyingGlass.svg"
 import box from "../../../assets/svgs/BoxArrow.svg";
 import heart from "../../../assets/svgs/Heart.svg";
 import user from "../../../assets/svgs/UserCircle.svg";
