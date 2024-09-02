@@ -1,0 +1,78 @@
+@import "../../../styles/global.scss";
+
+.contact__section {
+    @include display(
+        $gap: 60px
+      );
+      
+
+
+    .section__title {
+        font-size: $fs-detail-300;
+        font-weight: $fw-bold;
+        color: $color-white-100;
+    }
+
+    .link__anchor {
+        font-size: $fs-detail-200;
+        font-weight: $fw-light;
+        color: $color-white-100;
+        text-decoration: none;
+    }
+
+    .first__section {
+        @include display(
+          $align: flex-start,
+          $direction: column,
+          $gap: 60px
+        );
+      
+        .section__aboutUs {
+          @include display(
+            $justify: space-between,
+            $align: flex-start,
+            $direction: column,
+            $gap: 30px
+          );
+      
+          .aboutUs__links {
+            @include display(
+              $justify: space-between,
+              $align: flex-start,
+              $direction: column,
+              $gap: 20px
+            );
+          }
+        }
+
+        .section__social {
+            @include display($justify: space-between, $gap: 10px);
+            width: 90%;
+        }
+      
+      }
+      
+      .second__section {
+          @include display($align: flex-start,$direction: column,$gap: 30px);
+      
+          .info__links {
+              @include display($justify: space-between, $align: flex-start,$direction: column,$gap:20px);
+          }
+      }
+      
+      .third__section {
+          @include display($align: flex-start,$direction: column,$gap: 30px);
+      
+          .payment__options {
+            @include display($align: center, $justify: center, $gap: 20px);
+              display: grid;
+              grid-template-columns: auto auto auto;
+              gap: 20px;
+              align-items: center;
+              justify-content: center;
+             
+          }
+      }
+      
+}
+

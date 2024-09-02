@@ -3,19 +3,38 @@ import { ProductTypeItem } from "./ProductTypeItem";
 import style from "./style.module.scss";
 import arrowLeft from "../../../assets/svgs/ArrowLeft.svg";
 import arrowRight from "../../../assets/svgs/ArrowRight.svg";
-import smartphone from "../../../assets/highlights/Smartphone.png";
 import { CarouselItem } from "./CarouselItem";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 type Product = {
-  productName:string;
-  productDescription:string;
-  productPhoto:string;
-  productPrice:number;
-}
+  productName: string;
+  descriptionShort: string; 
+  photo: string; 
+  price: number;
+};
 
-type Products = Product[];
 
 export const ProductDisplaySection = () => {
+  const [productList, setProductList] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "http://api.allorigins.win/get?url=https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json"
+        );
+        const jsonData = JSON.parse(response.data.contents);
+        const productData = jsonData.products;
+        setProductList(productData);
+        console.log(productData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <section>
@@ -80,12 +99,19 @@ export const ProductDisplaySection = () => {
             </button>
           </div>
           <ul className={style.product__carousel}>
-            <CarouselItem productImg={smartphone} productDescription={"Lorem ipsum dolor sit amet, consectetur adipiscing elit."} productPrevPrice={"R$15,00"} productPrice={"R$20,00"} productInstallment={"ou 2x de R$ 49,95 sem juros"} freeDelivery={false} />
-            <CarouselItem productImg={smartphone} productDescription={"Lorem ipsum dolor sit amet, consectetur adipiscing elit."} productPrevPrice={"R$15,00"} productPrice={"R$20,00"} productInstallment={"ou 2x de R$ 49,95 sem juros"} freeDelivery={false} />
-            <CarouselItem productImg={smartphone} productDescription={"Lorem ipsum dolor sit amet, consectetur adipiscing elit."} productPrevPrice={"R$15,00"} productPrice={"R$20,00"} productInstallment={"ou 2x de R$ 49,95 sem juros"} freeDelivery={false} />
-            <CarouselItem productImg={smartphone} productDescription={"Lorem ipsum dolor sit amet, consectetur adipiscing elit."} productPrevPrice={"R$15,00"} productPrice={"R$20,00"} productInstallment={"ou 2x de R$ 49,95 sem juros"} freeDelivery={false} />
+            {productList.map((product) => (
+              <CarouselItem
+                key={crypto.randomUUID()}
+                productImg={product.photo}
+                productDescription={product.descriptionShort}
+                productName={product.productName}
+                productPrevPrice={(product.price + (product.price * 0.10))}
+                productInstallment={"ou 2x de R$ "+ (product.price / 2) + " sem juros"}
+                productPrice={product.price}
+              />
+            ))}
+            
           </ul>
-          
         </div>
       </div>
     </section>

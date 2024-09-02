@@ -1,8 +1,8 @@
 import style from "./style.module.scss";
 
-export const StandardInfo = ({standardTitle, standardDescription}:any) => {
+export const StandardInfo = ({standardTitle, standardDescription, isProduct}:any) => {
     return (
-        <div className={style.standard__container}>
+        <div className={isProduct ? style.product__container : style.standard__container}>
           <div className={style.standard__wrapper}>
               <h3 className={style.standard__title}>{standardTitle}</h3>
               <p className={style.standard__description}>{standardDescription}</p>

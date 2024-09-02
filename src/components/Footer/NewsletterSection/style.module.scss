@@ -1,0 +1,77 @@
+@import "../../../styles/global.scss";
+
+.newsletter__section {
+  @include display(
+    $justify: space-evenly,
+    $align: flex-start,
+    $direction: column,
+    $gap: 30px
+  );
+  background-color: $color-white-100;
+  width: 480px;
+  height: 260px;
+  border-radius: 10px;
+
+  .newsletter__wrapper {
+    @include display(
+        $justify: space-between,
+        $align: flex-start,
+        $direction: column
+      );
+      height: 100px;
+    padding-inline: 30px;
+
+    .newsletter__title {
+        font-weight: $fw-light;
+        font-size: $fs-highlight-300;
+        color: $color-black-300;
+      }
+    
+      .newsletter__highlight {
+        font-weight: $fw-bold;
+        font-size: $fs-highlight-500;
+        color: $color-black-300;
+      }
+    
+      .newsletter__description {
+        font-weight: $fw-light;
+        font-size: $fs-detail-200;
+        color: $color-black-300;
+        text-align: center;
+      }
+  }
+
+
+
+  .form__wrapper {
+    @include display(
+        $justify: center,
+        $align: center,
+        $gap: 8px
+      );
+      width: 100%;
+
+      .form__input {
+        font-size: $fs-detail-200;
+        border: 1px solid $color-black-400;
+        height: 45px;
+        width: 230px;
+        border-radius: 5px;
+        padding-inline: 1.5rem;
+
+        &::placeholder {
+            font-weight: $fw-normal;
+            color: $color-gray-50;
+        }
+      }
+
+      .form__button {
+        width: 65px;
+        height: 45px;
+        background-color: $color-primary-100;
+        border-radius: 5px;
+        color: $color-white-100;
+        font-weight: $fw-bold;
+      }
+  }
+}

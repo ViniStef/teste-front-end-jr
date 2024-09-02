@@ -1,6 +1,7 @@
 import style from "./style.module.scss";
 
 export const CategoryItem = ({categoryName, categoryImg}: any) => {
+
   return (
     <li className={style.category__item}>
       <div className={style.category__wrapper}>

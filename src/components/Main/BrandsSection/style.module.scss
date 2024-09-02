@@ -1,0 +1,38 @@
+@import "../../../styles/global.scss";
+
+.brand__section {
+    @include display($justify: center, $align: center, $direction: column);
+    position: relative;
+    .brand__title {
+        color: $color-primary-100;
+    }
+
+    .brand__nav {
+        width: 100%;
+
+        .brand__list {
+            @include display($justify: space-around, $align: flex-start);
+            width: 100%;
+            padding-block: 4.5rem;
+            position: relative;
+        }
+    }
+
+    .control__button {
+        border-radius: 50%;
+        box-shadow: 0px 4px 10px 4px $color-white-400;
+        position: absolute;
+        height: 56px;
+        width: 56px;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 45px;
+        background-color: $color-white-100;
+
+        img {
+            width: 14px;
+            height: 23px;
+        }
+    }
+}

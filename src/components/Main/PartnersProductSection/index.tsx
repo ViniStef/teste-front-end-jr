@@ -5,8 +5,8 @@ export const PartnersProductSection = () => {
   return (
     <section className={style.partnersProduct__section}>
       <div className={style.partnersProduct__wrapper}>
-        <StandardInfo standardTitle={"Parceiros"} standardDescription={"Lorem ipsum dolor sit amet, consectetur"} />
-        <StandardInfo standardTitle={"Parceiros"} standardDescription={"Lorem ipsum dolor sit amet, consectetur"} />
+        <StandardInfo isProduct={false} standardTitle={"Parceiros"} standardDescription={"Lorem ipsum dolor sit amet, consectetur"} />
+        <StandardInfo isProduct={false} standardTitle={"Parceiros"} standardDescription={"Lorem ipsum dolor sit amet, consectetur"} />
       </div>
       <div className={style.related__container}>
       <div className={style.related__wrapper}>
@@ -17,17 +17,9 @@ export const PartnersProductSection = () => {
         <p className={style.viewAll__text}>Ver todos</p>
       </div>
 
-      <div>
-        <div>
-          <h3>Produtos</h3>
-          <p>Lorem ipsum dolor sit amet consectetur.</p>
-          <button>CONFIRA</button>
-        </div>
-        <div>
-          <h3>Produtos</h3>
-          <p>Lorem ipsum dolor sit amet consectetur.</p>
-          <button>CONFIRA</button>
-        </div>
+      <div className={style.partnersProduct__wrapper}>
+        <StandardInfo isProduct={true} standardTitle={"Produtos"} standardDescription={"Lorem ipsum dolor sit amet, consectetur"} />
+        <StandardInfo isProduct={true} standardTitle={"Produtos"} standardDescription={"Lorem ipsum dolor sit amet, consectetur"} />
       </div>
     </section>
   );
