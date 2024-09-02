@@ -4,37 +4,27 @@ import style from "./style.module.scss";
 import arrowLeft from "../../../assets/svgs/ArrowLeft.svg";
 import arrowRight from "../../../assets/svgs/ArrowRight.svg";
 import { CarouselItem } from "./CarouselItem";
-import axios from "axios";
-import { useEffect, useState } from "react";
 
-type Product = {
-  productName: string;
-  descriptionShort: string; 
-  photo: string; 
-  price: number;
-};
+import { useEffect } from "react";
 
 
-export const ProductDisplaySection = () => {
-  const [productList, setProductList] = useState<Product[]>([]);
+
+export const ProductDisplaySection = ({ setIsVisible,productList, setProductInfo }: any) => {
+
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "http://api.allorigins.win/get?url=https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json"
-        );
-        const jsonData = JSON.parse(response.data.contents);
-        const productData = jsonData.products;
-        setProductList(productData);
-        console.log(productData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+    let currentHold = 4
+    let liProducts = document.querySelectorAll(".carousel__item")
+    liProducts.forEach((li, index) => {
+      console.log(li)
+      if (index <= currentHold) {
+        li.classList.add("show__carousel")
+      } else {
+        li.classList.remove("show__carousel")
 
-    fetchData();
-  }, []);
+      }
+    })
+  },[])
 
   return (
     <section>
@@ -99,18 +89,25 @@ export const ProductDisplaySection = () => {
             </button>
           </div>
           <ul className={style.product__carousel}>
-            {productList.map((product) => (
-              <CarouselItem
-                key={crypto.randomUUID()}
-                productImg={product.photo}
-                productDescription={product.descriptionShort}
-                productName={product.productName}
-                productPrevPrice={(product.price + (product.price * 0.10))}
-                productInstallment={"ou 2x de R$ "+ (product.price / 2) + " sem juros"}
-                productPrice={product.price}
-              />
-            ))}
-            
+            {productList.map((product:any, index:any)=> {
+              return (
+                <CarouselItem
+                  setIsVisible={setIsVisible}
+                  setProductInfo={setProductInfo}
+                  tabIndex={index}
+                  key={crypto.randomUUID()}
+                  productImg={product.photo}
+                  productDescription={product.descriptionShort}
+                  productName={product.productName}
+                  productPrevPrice={product.price + product.price * 0.1}
+                  productInstallment={
+                    "ou 2x de R$ " + product.price / 2 + " sem juros"
+                  }
+                  productPrice={product.price}
+                />
+                
+              );
+            })}
           </ul>
         </div>
       </div>

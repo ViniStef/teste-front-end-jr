@@ -1,0 +1,24 @@
+@import "../../../../styles/global.scss";
+
+.modal__container {
+    @include display($justify: center, $align: center);
+    background-color: rgba(0,0,0,.25);
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+
+    .modal__content {
+        background-color: $color-white-100;
+
+        .close__button {
+            @include display($justify: flex-end, $align: center);
+            width: 100%;
+            height: 2rem;
+            font-size: $fs-title-100;
+            padding-right: 20px;
+        }
+
+
+    }
+}

@@ -2,7 +2,7 @@
 
 .carousel__item {
     @include display($justify: center, $align: flex-start, $direction: column, $gap: 10px);
-    width: 280px;
+    width: 265px;
     padding: 12px;
     box-shadow: 0px 0px 10px 5px $color-white-400;
     border-radius: 10px;

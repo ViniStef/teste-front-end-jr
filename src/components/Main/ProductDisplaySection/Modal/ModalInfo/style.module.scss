@@ -1,0 +1,84 @@
+@import "../../../../../styles/global.scss";
+
+.modal__infos {
+    @include display($justify: space-evenly, $align: center);
+    
+    .product__img {
+        padding: 56px;
+        padding-top: 40px;
+        scale: 1.2;
+    }
+
+    .product__purchase {
+        @include display($justify: flex-start, $align: start, $direction: column, $gap: 1rem);
+        width: 50%;
+        min-width: 450px;
+
+        .product__name {
+            font-family: $ff-accent;
+            font-size: $fs-highlight-600;
+            font-weight: $fw-normal;
+            color: $color-accent;
+            text-transform: uppercase;
+        }
+
+        .product__price {
+            font-family: $ff-accent;
+            font-size: $fs-highlight-600;
+            font-weight: $fw-black;
+            color: $color-accent;
+        }
+
+        .product__description {
+            font-family: $ff-accent;
+            font-size: $fs-detail-400;
+            font-weight: $fw-normal;
+            color: $color-black-500;
+            width: 80%;
+        }
+        
+        .product__details {
+            font-family: $ff-accent;
+            font-size: $fs-highlight-200;
+            font-weight: $fw-semibold;
+            color: $color-accent;
+            text-decoration: none;
+        }
+
+        .amount__wrapper {
+            @include display($justify: space-between, $align: center);
+            font-family: $ff-accent;
+            border: 1px solid $color-accent;
+            width: 130px;
+            height: 50px;
+            border-radius: 5px;
+
+            button {
+                font-size: $fs-title-200;
+                padding: 10px;
+                @include display($justify: space-between, $align: center);
+                color: $color-accent;
+            }
+
+            p {
+                font-size: $fs-highlight-500;
+                font-weight: $fw-medium;
+                padding: 10px;
+                color: $color-accent;
+            }
+
+
+        }
+        .purchase__button {
+            width: 300px;
+            font-family: $ff-primary;
+            height: 60px;
+            font-size: $fs-highlight-300;
+            font-weight: $fw-bold;
+            color: $color-white-100;
+            border-radius: 5px;
+            background-color: $color-primary-100;
+            margin-bottom: 25px;
+        }
+    }
+}
