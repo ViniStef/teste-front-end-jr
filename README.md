@@ -20,6 +20,9 @@ Projeto desenvolvido com **React**, **TypeScript** e **SASS**, tendo como layout
 O projeto consome uma [API](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) de produtos em JSON que serve como Vitrine.
 A aplicação é dividida em componentes, com os principais folders sendo: HomePage, Header, Main e Footer. Outras pastas auxiliam no funcionamento e organização do código.
 
+**Observação**
+Esta versão da página foi projetada para ser visualizada corretamente em navegadores com uma largura de 1440 pixels. Para uma melhor experiência, recomenda-se utilizar um dispositivo com essa resolução. Caso esteja utilizando outro dispositivo, por favor, utilize as ferramentas de desenvolvedor (devTools) para verificar o visual esperado.
+
 **Autor**
 
 **Vinicius Steflisch da Silva - Desenvolvedor FullStack**

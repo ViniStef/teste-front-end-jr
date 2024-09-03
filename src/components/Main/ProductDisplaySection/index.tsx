@@ -2,34 +2,14 @@ import { CategoryItem } from "./CategoryItem";
 import { ProductTypeItem } from "./ProductTypeItem";
 import style from "./style.module.scss";
 import { CarouselItem } from "./CarouselItem";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import { ButtonGroup } from "./ButtonGroup";
 import { Product } from "../../HomePage";
-
+import arrowLeft from "../../../assets/svgs/ArrowLeft.svg"
+import arrowRight from "../../../assets/svgs/ArrowRight.svg"
 export const ProductDisplaySection = ({
   setIsVisible,
   productList,
   setProductInfo,
 }: any) => {
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 1440 },
-      items: 4,
-    },
-    desktop: {
-      breakpoint: { max: 1440, min: 1024 },
-      items: 4,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
 
   return (
     <section>
@@ -83,26 +63,36 @@ export const ProductDisplaySection = ({
           </ul>
         </nav>
 
-        <Carousel infinite={true} arrows={false} customButtonGroup={<ButtonGroup />} itemClass={style.slider__item} sliderClass={style.slider__content} className={style.carousel__container} responsive={responsive}>
-        {productList.map((product:Product, index:number) => {
-              return (
-                <CarouselItem
-                  setIsVisible={setIsVisible}
-                  setProductInfo={setProductInfo}
-                  tabIndex={index}
-                  key={crypto.randomUUID()}
-                  productImg={product.photo}
-                  productDescription={product.descriptionShort}
-                  productName={product.productName}
-                  productPrevPrice={product.price + product.price * 0.1}
-                  productInstallment={
-                    "ou 2x de R$ " + product.price / 2 + " sem juros"
-                  }
-                  productPrice={product.price}
-                />
-              );
-            })}
-        </Carousel>
+        <div className={style.carousel__wrapper}>
+          <ul className={style.carousel__container}>
+            {productList.slice(0, 4).map((product:Product, index:number) => {
+                  return (
+                    <CarouselItem
+                      setIsVisible={setIsVisible}
+                      setProductInfo={setProductInfo}
+                      tabIndex={index}
+                      key={crypto.randomUUID()}
+                      productImg={product.photo}
+                      productDescription={product.descriptionShort}
+                      productName={product.productName}
+                      productPrevPrice={product.price + product.price * 0.1}
+                      productInstallment={
+                        "ou 2x de R$ " + product.price / 2 + " sem juros"
+                      }
+                      productPrice={product.price}
+                    />
+                  );
+                })}
+          </ul>
+          <div className={style.slider__buttons}>
+            <button className={style.button__left}>
+              <img src={arrowLeft} alt="Left" />
+              </button>
+              <button className={style.button__right}>
+                <img src={arrowRight} alt="Right" />
+              </button>
+          </div>
+        </div>
 
       </div>
     </section>
