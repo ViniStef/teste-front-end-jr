@@ -13,7 +13,7 @@ Código disponível em meu [GitHub](https://github.com/ViniStef/teste-front-end-
 
 Ao clonar ou fazer o fork, utilize o comando `npm install` (ou `yarn install`, caso esteja utilizando o 'Yarn') para instalar todas as dependências.
 Para Compilar o projeto, use o comando `npm run build` (ou `yarn build`).
-Inicialize a aplicação através do `npm run dev`.
+Inicialize a aplicação através do `npm run dev`. Caso haja algum erro, tente também o comando `vite build`.
 Copie e cole o LINK gerado na URL do navegador ou utilize o `CTRL + Left Click`.
 
 **Desenvolvimento**
