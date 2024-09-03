@@ -25,7 +25,7 @@ export const HomePage = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://api.allorigins.win/get?url=https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json"
+          "https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json"
         );
         const jsonData = JSON.parse(response.data.contents);
         const productData = jsonData.products;
